@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[3.*, 4.0.0)"
+  },
+  "extensions": {
+    "kafka": {
+      "SessionTimeoutMs": 300000,
+      "MaxPollIntervalMs": 600000,
+      "MaxPartitionFetchBytes": 1,
+      "MaxBatchSize": 32,
+      "AutoCommitIntervalMs": 200,
+      "AutoOffsetReset": 1,
+      "MetadataMaxAgeMs": 180000,
+      "SocketKeepaliveEnable": true,
+      "SubscriberIntervalInSeconds": 1,
+      "ExecutorChannelCapacity": 1,
+      "ChannelFullRetryIntervalInMs": 50
+    }
+  }
+}
